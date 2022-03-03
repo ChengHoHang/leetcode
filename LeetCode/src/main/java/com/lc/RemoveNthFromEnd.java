@@ -7,27 +7,25 @@ package com.lc;
 public class RemoveNthFromEnd {
 
     public ListNode removeNthFromEnd(ListNode head, int n) {
-        if (head == null) {
+        if (head == null || head.next == null) {
             return null;
         }
 
-        // 使得fast指向倒数第n + 1个
+        // 使得slow指向倒数第n个
         ListNode fast = head, slow = head;
-        for (int i = 0; i < n + 1 && slow.next != null; i++) {
-            slow = slow.next;
+        for (int i = 0; i < n; i++) {
+            fast = fast.next;
+            if (fast == null) {
+                return head.next;
+            }
         }
 
-        if (slow == fast) {
-            fast.next = null;
-            return head;
-        }
-
-        while (slow.next != null) {
+        while (fast.next != null) {
             fast = fast.next;
             slow = slow.next;
         }
 
-        fast.next = fast.next.next;
+        slow.next = slow.next.next;
 
         return head;
     }
@@ -73,7 +71,7 @@ public class RemoveNthFromEnd {
 
     public static void main(String[] args) {
         RemoveNthFromEnd removeNthFromEnd = new RemoveNthFromEnd();
-        System.out.println(removeNthFromEnd.removeNthFromEnd(ListNode.of(new int[]{1, 2, 3, 4, 5}), 2));
+        System.out.println(removeNthFromEnd.removeNthFromEnd(ListNode.of(new int[]{1, 2, 3, 4, 5}), 1));
         System.out.println(removeNthFromEnd.removeNthFromEnd(ListNode.of(new int[]{1}), 1));
         System.out.println(removeNthFromEnd.removeNthFromEnd(ListNode.of(new int[]{1, 2}), 1));
     }
