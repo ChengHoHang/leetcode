@@ -1,5 +1,7 @@
 package com.lc;
 
+import com.lc.base.ListNode;
+
 /**
  * https://leetcode-cn.com/problems/add-two-numbers/
  *
@@ -46,24 +48,6 @@ public class AddTwoNumber {
         }
 
         return root.next;
-    }
-
-
-    class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
     }
 
     

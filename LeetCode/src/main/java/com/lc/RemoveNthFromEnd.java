@@ -1,5 +1,7 @@
 package com.lc;
 
+import com.lc.base.ListNode;
+
 /**
  * @author chh
  * @date 2022/3/2 22:15
@@ -31,43 +33,7 @@ public class RemoveNthFromEnd {
     }
 
 
-    public static class ListNode {
-        int val;
-        ListNode next;
 
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-
-        public static ListNode of(int[] ints) {
-            ListNode head = new ListNode();
-            ListNode target = head;
-            for (int i : ints) {
-                target.next = new ListNode(i);
-                target = target.next;
-            }
-            return head.next;
-        }
-
-        @Override
-        public String toString() {
-            StringBuilder sb = new StringBuilder();
-            ListNode target = this;
-            do {
-                sb.append(target.val).append(", ");
-                target = target.next;
-            } while (target != null);
-            return sb.toString();
-        }
-    }
 
     public static void main(String[] args) {
         RemoveNthFromEnd removeNthFromEnd = new RemoveNthFromEnd();
