@@ -18,7 +18,7 @@ public class SwapPairs {
         nullHead.next = head;
 
         ListNode p = nullHead;
-        while (p != null && p.next.next != null) {
+        while (p.next != null && p.next.next != null) {
             ListNode q = p.next;
             p.next = q.next;
             ListNode nextGroupNode = p.next.next;
@@ -36,5 +36,6 @@ public class SwapPairs {
         SwapPairs swapPairs = new SwapPairs();
         System.out.println(swapPairs.swapPairs(ListNode.of(new int[]{1, 2, 3, 4, 5})));
         System.out.println(swapPairs.swapPairs(ListNode.of(new int[]{1, 2})));
+        System.out.println(swapPairs.swapPairs(ListNode.of(new int[]{1, 2, 3})));
     }
 }
