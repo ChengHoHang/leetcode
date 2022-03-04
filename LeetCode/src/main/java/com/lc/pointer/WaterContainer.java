@@ -1,4 +1,4 @@
-package com.lc;
+package com.lc.pointer;
 
 /**
  * https://leetcode-cn.com/problems/container-with-most-water/

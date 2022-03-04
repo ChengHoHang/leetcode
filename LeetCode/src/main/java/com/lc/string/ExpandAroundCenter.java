@@ -1,6 +1,7 @@
-package com.lc.longestPalindrome;
+package com.lc.string;
 
 /**
+ * #longestPalindrome
  * @author chh
  * @date 2022/2/28 22:07
  */

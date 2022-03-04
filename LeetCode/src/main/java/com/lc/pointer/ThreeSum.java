@@ -1,4 +1,4 @@
-package com.lc;
+package com.lc.pointer;
 
 import java.util.ArrayList;
 import java.util.Arrays;

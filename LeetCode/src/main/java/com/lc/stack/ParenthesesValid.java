@@ -1,4 +1,4 @@
-package com.lc;
+package com.lc.stack;
 
 import java.util.Deque;
 import java.util.HashMap;

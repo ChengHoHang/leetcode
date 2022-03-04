@@ -1,4 +1,4 @@
-package com.lc;
+package com.lc.linklist;
 
 import com.lc.base.ListNode;
 

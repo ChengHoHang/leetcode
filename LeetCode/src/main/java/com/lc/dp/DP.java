@@ -1,6 +1,7 @@
-package com.lc.longestPalindrome;
+package com.lc.dp;
 
 /**
+ * #longestPalindrome
  * https://leetcode-cn.com/problems/longest-palindromic-substring/
  * @author chh
  * @date 2022/2/28 21:29

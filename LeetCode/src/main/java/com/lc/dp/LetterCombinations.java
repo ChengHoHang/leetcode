@@ -1,4 +1,4 @@
-package com.lc;
+package com.lc.dp;
 
 import java.util.*;
 
