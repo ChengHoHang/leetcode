@@ -6,7 +6,7 @@ package com.lc.dp;
  * @author chh
  * @date 2022/2/28 21:29
  */
-public class DP {
+public class LongestPalindromicSubstring {
     
     
 //    abcca
@@ -66,8 +66,8 @@ public class DP {
     }
 
     public static void main(String[] args) {
-        DP dp = new DP();
-        System.out.println(dp.longestPalindrome("aacabdkacaa"));
-        System.out.println(dp.longestPalindrome("cbbd"));
+        LongestPalindromicSubstring longestPalindromicSubstring = new LongestPalindromicSubstring();
+        System.out.println(longestPalindromicSubstring.longestPalindrome("aacabdkacaa"));
+        System.out.println(longestPalindromicSubstring.longestPalindrome("cbbd"));
     }
 }
