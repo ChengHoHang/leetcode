@@ -19,7 +19,11 @@ public class InsertIntoSortedIntervals {
 
         int curIndex = 0;
         // 将不需要合并的先放result中，curIndex就是需要合并的interval
-        for (; curIndex < intervals.length; curIndex++) {
+        for (; curIndex <= intervals.length; curIndex++) {
+            if (curIndex == intervals.length) {
+                result.add(newInterval);
+                return result.toArray(new int[0][0]);
+            }
             int[] curInterval = intervals[curIndex];
             if (curInterval[1] < newInterval[0]) {
                 result.add(curInterval);
@@ -45,6 +49,7 @@ public class InsertIntoSortedIntervals {
                 for (int j = i; j < intervals.length; j++) {
                     result.add(intervals[j]);
                 }
+                break;
             } else {
                 lastInterval[1] = Math.max(lastInterval[1], intervals[i][1]);
             }
@@ -58,10 +63,13 @@ public class InsertIntoSortedIntervals {
         int[][] intervals1 = {new int[]{1, 2}, new int[]{3, 5}, new int[]{6, 7}, new int[]{8, 10}, new int[]{12, 16}};
         System.out.println(Arrays.deepToString(intervals.insert(intervals1, new int[]{4, 8})));
 
-        int[][] intervals2 = {new int[]{9, 10}};
-        System.out.println(Arrays.deepToString(intervals.insert(intervals2, new int[]{4, 8})));
+        int[][] intervals2 = {new int[]{1, 5}};
+        System.out.println(Arrays.deepToString(intervals.insert(intervals2, new int[]{6, 7})));
 
         int[][] intervals3 = {};
         System.out.println(Arrays.deepToString(intervals.insert(intervals3, new int[]{4, 8})));
+
+        int[][] intervals4 = {new int[]{2, 5}, new int[]{6, 7}, new int[]{8, 9}};
+        System.out.println(Arrays.deepToString(intervals.insert(intervals4, new int[]{0, 1})));
     }
 }

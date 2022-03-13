@@ -1,4 +1,4 @@
-package com.lc.tree.backtracking;
+package com.lc.backtracking;
 
 import java.util.ArrayList;
 import java.util.Arrays;
