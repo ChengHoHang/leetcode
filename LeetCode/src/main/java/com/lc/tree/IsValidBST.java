@@ -3,6 +3,7 @@ package com.lc.tree;
 import com.lc.base.TreeNode;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 /**
  * @author chh
@@ -10,25 +11,31 @@ import java.util.Arrays;
  */
 public class IsValidBST {
 
+    private long lowerBoard = Long.MIN_VALUE;
+    private long upperBoard = Long.MAX_VALUE;
+
     public boolean isValidBST(TreeNode root) {
+        return dfs(root, lowerBoard, upperBoard);
+    }
+
+    private boolean dfs(TreeNode root, long lowerBoard, long upperBoard) {
         if (root == null) {
             return true;
         }
 
-        if (root.left != null && root.left.val < root.val) {
+        if (root.val >= upperBoard || root.val <= lowerBoard) {
             return false;
         }
 
-        if (root.right != null && root.right.val < root.val) {
-            return false;
-        }
-
-        return isValidBST(root.left) && isValidBST(root.right);
+        return dfs(root.left, lowerBoard, root.val) && dfs(root.right, root.val, upperBoard);
     }
 
     public static void main(String[] args) {
-        TreeNode treeNode = TreeNode.getByNodes(Arrays.asList(5, 4, 6, null, null, 3, 7));
         IsValidBST isValidBST = new IsValidBST();
+        TreeNode treeNode = TreeNode.getByNodes(Arrays.asList(5, 4, 7, null, null, 6, 8));
         System.out.println(isValidBST.isValidBST(treeNode));
+
+        TreeNode treeNode1 = TreeNode.getByNodes(Collections.singletonList(2147483647));
+        System.out.println(isValidBST.isValidBST(treeNode1));
     }
 }
